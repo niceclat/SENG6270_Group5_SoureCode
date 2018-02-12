@@ -1,0 +1,9 @@
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.Form1.resources
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.Properties.Resources.resources
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.csproj.GenerateResource.Cache
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.csproj.CoreCompileInputs.cache
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\bin\Debug\Group5CodeProject.exe.config
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\bin\Debug\Group5CodeProject.exe
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\bin\Debug\Group5CodeProject.pdb
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.exe
+C:\Users\paulus_d\Desktop\MyFolder\Schools\ECU\SENG 6270 - Validation and Verification\Project\Group5CodeProject\Group5CodeProject\obj\Debug\Group5CodeProject.pdb
