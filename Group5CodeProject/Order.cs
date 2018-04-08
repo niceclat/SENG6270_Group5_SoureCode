@@ -55,7 +55,7 @@ public class Order {
             SizePrice(size, qty, .10, .28, .60);
         }
       
-        FinishPrice(finish, size, qty, .2, .3, .4);
+        FinishPrice(finish, size, qty, .02, .03, .04);
         ProcessingTimePrice(time, qty, 1, 1.5);
 
         return OrderTotal;
@@ -71,7 +71,7 @@ public class Order {
         string finish = FinishOptions.SelectedItem;
 
         SizePrice(size, qty, .19, .39, .79);
-        FinishPrice(finish, size, qty, .4, .6, .8);
+        FinishPrice(finish, size, qty, .04, .06, .08);
         ProcessingTimePrice(time, qty, 2,2.5);
         
         return 0;
@@ -83,15 +83,15 @@ public class Order {
         //Get the qty times size options
         if (size == Sizes.SMALL)
         {
-            OrderTotal = OrderTotal + (qty * price1);
+            OrderTotal += (qty * price1);
         }
         else if (size == Sizes.MEDIUM)
         {
-            OrderTotal = OrderTotal + (qty * price2);
+            OrderTotal += (qty * price2);
         }
         else if (size == Sizes.LARGE)
         {
-            OrderTotal = OrderTotal + (qty * price3);
+            OrderTotal += (qty * price3);
         }
     }
 
@@ -103,15 +103,15 @@ public class Order {
         {
             if (size == Sizes.SMALL)
             {
-                OrderTotal = OrderTotal + (qty * price1);
+                OrderTotal += (qty * price1);
             }
             else if (size == Sizes.MEDIUM)
             {
-                OrderTotal = OrderTotal + (qty * price2);
+                OrderTotal += (qty * price2);
             }
             else if (size == Sizes.LARGE)
             {
-                OrderTotal = OrderTotal + (qty * price3);
+                OrderTotal += (qty * price3);
             }
         }
     }
