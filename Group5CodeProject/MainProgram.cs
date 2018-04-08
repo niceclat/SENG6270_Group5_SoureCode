@@ -26,8 +26,19 @@ public class MainProgram {
 
     //Create and add a new order to the list
 	public void AddNewOrder(int OrderID){
-        orders.Add(new Order(OrderID));
+        int qtyLeft = GetUsedQuantity();
+        orders.Add(new Order(OrderID, qtyLeft));
 	}
+
+    public int GetUsedQuantity()
+    {
+        int qty = 0;
+        foreach (Order o in orders)
+        {
+            qty += Convert.ToInt32(o.QuantityOptions.SelectedItem);
+        }
+        return qty;
+    }
 
     //If the user applied a discount or qualifies for one adjust the total accordingly
 	public void UpdateTotalAndDiscount(string Code){

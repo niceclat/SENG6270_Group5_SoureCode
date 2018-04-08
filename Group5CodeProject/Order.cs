@@ -25,10 +25,10 @@ public class Order {
     public int OrderID;
     public double OrderTotal { get; set; }
 
-	public Order(int ID){
+	public Order(int ID, int QtyLeft){
         FinishOptions = new Finish();
         ProcessingOptions = new ProcessingOptions();
-        QuantityOptions = new Quantites();
+        QuantityOptions = new Quantites(QtyLeft);
         SizeOptions = new Sizes();
         OrderID = ID;
 	}

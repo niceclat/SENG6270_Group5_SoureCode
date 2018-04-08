@@ -35,9 +35,9 @@ namespace Group5CodeProject
         //Add a default order to the list
         public void AddOrder()
         {
-            orderList.AddNewOrder(++OrderID);
-            AddNewPanel();
-            UpdateTotals();
+                orderList.AddNewOrder(++OrderID);
+                AddNewPanel();
+                UpdateTotals();
         }
 
         //Create a new order panel and add it to the list
@@ -150,7 +150,7 @@ namespace Group5CodeProject
                 AddOrder();
             else
                 UpdateTotals();
-
+            QuantityControl();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -226,12 +226,39 @@ namespace Group5CodeProject
                     case QUANTITY:
                         {
                             temp.QuantityOptions.SelectedItem = cb.SelectedItem.ToString();
+                            QuantityControl();
                             break;
                         }
                 }
             }
             //Trigger the state change to update all totals
             UpdateTotals();
+        }
+
+        private void QuantityControl()
+        {
+            int Used = orderList.GetUsedQuantity();
+            foreach (Order o in orderList.orders)
+            {
+                //Get the combo box for the flow layout panel
+                ComboBox cbQuantities = (ComboBox)MasterPanel.Controls.Find(o.OrderID.ToString(), false)[0].Controls.Find(QUANTITY, false)[0];
+                string selectedItem = o.QuantityOptions.SelectedItem;
+                o.QuantityOptions.SetItems(Convert.ToInt32(selectedItem), Used);
+                cbQuantities.Items.Clear();
+                cbQuantities.Items.AddRange(o.QuantityOptions.items.ToArray());
+                cbQuantities.SelectedIndexChanged -= UpdateSelectedItem;
+                cbQuantities.SelectedItem = selectedItem;
+                cbQuantities.SelectedIndexChanged += UpdateSelectedItem;
+            }
+
+            if (orderList.GetUsedQuantity() != Quantites.Maximum)
+            {
+                btnAddOrder.Enabled = true;
+            }
+            else
+            {
+                btnAddOrder.Enabled = false;
+            }
         }
 
         private void tbPromo_TextChanged(object sender, EventArgs e)
