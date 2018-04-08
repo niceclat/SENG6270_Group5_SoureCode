@@ -43,18 +43,39 @@ public class MainProgram {
     //If the user applied a discount or qualifies for one adjust the total accordingly
 	public void UpdateTotalAndDiscount(string Code){
         CalculateAllTotal();
+        double PromoPrice = 0;
+        double DiscountPrice = 0;
+
         //If the promo code is applied and it is an order 1 with qty = 100 subtract 2 dollars
         if (Code == PROMOCODE_1 && orders.Count == 1 && Convert.ToInt32(orders[0].QuantityOptions.SelectedItem) == 100)
         {
-            TotalPrice = TotalPrice - 2;
+            PromoPrice = TotalPrice - 2;
         }
         //If hte promo code does not apply but the total is > 35 reduce the price by 5%
-        else if (TotalPrice > 35)
+        if (TotalPrice > 35)
         {
-            TotalPrice = TotalPrice * .95;
+            DiscountPrice = TotalPrice * .95;
         }
-            
-	}
+        if (PromoPrice != 0 && DiscountPrice != 0)
+        {
+            if (PromoPrice < DiscountPrice)
+            {
+                TotalPrice = PromoPrice;
+            }
+            else if (DiscountPrice < PromoPrice)
+            {
+                TotalPrice = DiscountPrice;
+            }
+        }
+        else if (DiscountPrice== 0 && PromoPrice!= 0)
+        {
+            TotalPrice = PromoPrice;
+        }
+        else if (DiscountPrice != 0 && PromoPrice == 0)
+        {
+            TotalPrice = DiscountPrice;
+        }
+    }
 
     //Return the total for all orders
 	private double CalculateAllTotal(){

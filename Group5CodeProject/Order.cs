@@ -44,9 +44,11 @@ public class Order {
         //Get the qty times size options
         if (qty <= 50)
         {
-            SizePrice(size, qty, .14, .34, .68);
+            //Error 1 Changed size price for quantity <= 50 to 15 cents
+            SizePrice(size, qty, .15, .34, .68);
         }
-        else if (qty > 50 && qty <= 75)
+        //Error 2 removed the = form the qty > 50 to qty <= 75. Basically 75 is no longer an option
+        else if (qty > 50 && qty < 75)
         {
             SizePrice(size, qty, .12, .31, .64);
         }
@@ -55,7 +57,8 @@ public class Order {
             SizePrice(size, qty, .10, .28, .60);
         }
       
-        FinishPrice(finish, size, qty, .02, .03, .04);
+        //Error 3 Changed the finish price from .04 to .4 this will miscalculate the finish pricing
+        FinishPrice(finish, size, qty, .02, .03, .4);
         ProcessingTimePrice(time, qty, 1, 1.5);
 
         return OrderTotal;
